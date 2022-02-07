@@ -17,16 +17,32 @@ Widget headerBar(
             color: Colors.grey.withOpacity(0.4),
             offset: Offset(0, 2))
       ]),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.arrow_back,
+                size: 30,
+                color: Colors.white,
+              )),
           Text(
             "${title}".toUpperCase(),
             style: TextStyle(
                 color: Colors.white,
-                fontSize: width * 0.07,
+                fontSize: width * 0.06,
                 fontWeight: FontWeight.bold),
-          )
+          ),
+          IconButton(
+              onPressed: null,
+              icon: Icon(
+                Icons.arrow_back,
+                size: 30,
+                color: Theme.of(context).primaryColor,
+              )),
         ],
       ),
     ),

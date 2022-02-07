@@ -152,8 +152,9 @@ class _SummaryState extends State<Summary> {
               padding: EdgeInsets.only(
                   top: height * 0.01, left: width * 0.03, right: width * 0.03),
               child: Container(
+                // color: Colors.red,
                 width: width,
-                height: height * 0.68,
+                height: height * 0.72,
                 child: boughtProductThisMonth.length == 0
                     ? Text(
                         "Nothing to show !!",
@@ -167,7 +168,7 @@ class _SummaryState extends State<Summary> {
                             boughtProduct: boughtProductThisMonth[index])),
               ),
             ),
-            bottonNavigationBar(context: context, height: height, width: width)
+            // bottonNavigationBar(context: context, height: height, width: width)
           ],
         ),
       ),

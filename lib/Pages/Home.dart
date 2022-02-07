@@ -4,6 +4,7 @@ import 'package:bisesh_dairy_udyog_app/Provider/Products.dart';
 import 'package:bisesh_dairy_udyog_app/Provider/Units.dart';
 import 'package:bisesh_dairy_udyog_app/Widgets/HeaderBar.dart';
 import 'package:bisesh_dairy_udyog_app/Widgets/ShowListOfMonth.dart';
+import 'package:bisesh_dairy_udyog_app/Widgets/functionGrid.dart';
 import 'package:bisesh_dairy_udyog_app/utils/colorParser.dart';
 
 import 'package:flutter/material.dart';
@@ -80,7 +81,7 @@ class _HomeState extends State<Home> {
       body: Container(
         width: width,
         height: height,
-        child: Column(
+        child: ListView(
           children: [
             Container(
               height: height * 0.3,
@@ -93,83 +94,86 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            // Container(
-            //   width: width,
-            //   height: height * 0.92,
-            //   child: Column(
-            //     children: [
-            //       headerBar(
-            //           context: context,
-            //           height: height,
-            //           width: width,
-            //           title: "Report"),
-            //       Padding(
-            //         padding: EdgeInsets.only(top: height * 0.08),
-            //         child: Row(
-            //           children: [
-            //             Container(
-            //               height: height * 0.075,
-            //               width: width * 0.35,
-            //               padding:
-            //                   EdgeInsets.symmetric(horizontal: width * 0.03),
-            //               decoration: BoxDecoration(
-            //                   color: Theme.of(context).primaryColor),
-            //               child: Row(
-            //                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-            //                 children: [
-            //                   Text(
-            //                     "${activeFiscalYear.fiscalYear}",
-            //                     style: TextStyle(
-            //                         color: Colors.white,
-            //                         fontSize: width * 0.04),
-            //                   ),
-            //                   Container(
-            //                       child: Icon(
-            //                     Icons.unfold_more,
-            //                     color: Colors.white,
-            //                     size: width * 0.06,
-            //                   )),
-            //                 ],
-            //               ),
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //       Padding(
-            //         padding: EdgeInsets.only(top: height * 0.03),
-            //         child: Container(
-            //           width: width,
-            //           height: height * 0.6,
-            //           child: ListView.builder(
-            //               controller: _autoScrollController,
-            //               itemCount: 12,
-            //               itemBuilder: (context, index) => AutoScrollTag(
-            //                     key: ValueKey(index),
-            //                     controller: _autoScrollController,
-            //                     index: index,
-            //                     child: showListOfMonth(
-            //                       context: context,
-            //                       height: height,
-            //                       width: width,
-            //                       month: monthList[index]["month"],
-            //                       total: monthList[index]["total"],
-            //                       color: month == index + 1
-            //                           ? Theme.of(context).primaryColor
-            //                           : Colors.white,
-            //                       textColor: month == index + 1
-            //                           ? Colors.white
-            //                           : Colors.black,
-            //                     ),
-            //                   )),
-            //         ),
-            //       )
-            //     ],
-            //   ),
-            // ),
-            // bottonNavigationBar(context: context, height: height, width: width)
+            Container(
+              child: functionGrid(context),
+            )
           ],
         ),
       ),
+      // Container(
+      //   width: width,
+      //   height: height * 0.92,
+      //   child: Column(
+      //     children: [
+      //       headerBar(
+      //           context: context,
+      //           height: height,
+      //           width: width,
+      //           title: "Report"),
+      //       Padding(
+      //         padding: EdgeInsets.only(top: height * 0.08),
+      //         child: Row(
+      //           children: [
+      //             Container(
+      //               height: height * 0.075,
+      //               width: width * 0.35,
+      //               padding:
+      //                   EdgeInsets.symmetric(horizontal: width * 0.03),
+      //               decoration: BoxDecoration(
+      //                   color: Theme.of(context).primaryColor),
+      //               child: Row(
+      //                 mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //                 children: [
+      //                   Text(
+      //                     "${activeFiscalYear.fiscalYear}",
+      //                     style: TextStyle(
+      //                         color: Colors.white,
+      //                         fontSize: width * 0.04),
+      //                   ),
+      //                   Container(
+      //                       child: Icon(
+      //                     Icons.unfold_more,
+      //                     color: Colors.white,
+      //                     size: width * 0.06,
+      //                   )),
+      //                 ],
+      //               ),
+      //             ),
+      //           ],
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: EdgeInsets.only(top: height * 0.03),
+      //         child: Container(
+      //           width: width,
+      //           height: height * 0.6,
+      //           child: ListView.builder(
+      //               controller: _autoScrollController,
+      //               itemCount: 12,
+      //               itemBuilder: (context, index) => AutoScrollTag(
+      //                     key: ValueKey(index),
+      //                     controller: _autoScrollController,
+      //                     index: index,
+      //                     child: showListOfMonth(
+      //                       context: context,
+      //                       height: height,
+      //                       width: width,
+      //                       month: monthList[index]["month"],
+      //                       total: monthList[index]["total"],
+      //                       color: month == index + 1
+      //                           ? Theme.of(context).primaryColor
+      //                           : Colors.white,
+      //                       textColor: month == index + 1
+      //                           ? Colors.white
+      //                           : Colors.black,
+      //                     ),
+      //                   )),
+      //         ),
+      //       )
+      //     ],
+      //   ),
+      // ),
+      // bottonNavigationBar(context: context, height: height, width: width)
     );
   }
 }
